@@ -27,11 +27,37 @@ $(function(){
             dataType:"json",
             success:function(data){
                 //3.1 遍历获取到的数据,创建每一条音乐
-                console.log(data);
+                // console.log(data);
+                $.each(data, function(index,ele){
+                    var $item = createMusicItem(index,ele);
+                    var $musicList = $(".content_list ul");
+                    $musicList.append($item);
+                })
             },
             error: function(e){
                 console.log(e);
             }
         });
+    }
+    //定义一个方法 创建一条音乐
+    function createMusicItem(index,music){
+        var $item = $("<li class=\"list_music\">"+
+        "<div class=\"list_check\"><i></i></div>"+
+        "<div class=\"list_number\">"+(index+1)+"</div>"+
+        "<div class=\"list_name\">"+music.name+
+            "<div class=\"list_menu\">"+
+                "<a href=\"javascript:;\" title=\"播放\"></a>"+
+                "<a href=\"javascript:;\" title=\"添加\"></a>"+
+                "<a href=\"javascript:;\" title=\"下载\"></a>"+
+                "<a href=\"javascript:;\" title=\"分享\"></a>"+
+            "</div>"+
+        "</div>"+
+        "<div class=\"list_singer\">"+music.singer+"</div>"+
+        "<div class=\"list_time\">"+
+            "<span>"+music.time+"</span>"+
+            "<a href=\"javascript:;\" title=\"删除\"></a>"+
+        "</div>"+
+    "</li>");
+    return $item;
     }
 });
