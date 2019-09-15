@@ -27,7 +27,7 @@ $(function(){
             dataType:"json",
             success:function(data){
                 //3.1 遍历获取到的数据,创建每一条音乐
-                // console.log(data);
+                console.log(data);
             },
             error: function(e){
                 console.log(e);
