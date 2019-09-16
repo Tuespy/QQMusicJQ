@@ -31,12 +31,21 @@ $(function(){
     //     $(this).toggleClass("list_checked");
     // });
     // 3. 添加子菜单播放按钮的监听事件
+    var $musicPlay = $(".music_play");
     $(".content_list").delegate(".list_menu_play","click",function(){
         // 3.1 切换播放按钮的图标
         $(this).toggleClass("list_menu_play2");
         // 3.2 复原其他的播放图标
         $(this).parents(".list_music").siblings().find(".list_menu_play").removeClass("list_menu_play2");
+        // 3.3 更改foot_in的播放按钮状态
+        if($(this).attr("class").indexOf("list_menu_play2") != -1){
+            //当前子菜单的播放按钮是播放状态
+            $musicPlay.addClass("music_play2");
+        }else{
+            $musicPlay.removeClass("music_play2");
+        }
     });
+    // 4. 加载歌曲列表
     getPlayerList();
     function getPlayerList(){
         $.ajax({
