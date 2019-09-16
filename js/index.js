@@ -22,9 +22,17 @@ $(function(){
     // },function(){
         
     // });
-    $(".list_check").click(function(){
-        // alert("abc");
+    // 2. 添加选框元素的事件代码
+    $(".content_list").delegate(".list_check","click",function(){
         $(this).toggleClass("list_checked");
+    });
+    // $(".list_check").click(function(){
+    //     // alert("abc");
+    //     $(this).toggleClass("list_checked");
+    // });
+    3. 添加子菜单播放按钮的监听事件
+    $(".content_list").delegate(".list_menu_play","click",function(){
+        $(this).toggleClass("list_menu_play2");
     });
     getPlayerList();
     function getPlayerList(){
