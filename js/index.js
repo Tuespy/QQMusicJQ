@@ -32,7 +32,10 @@ $(function(){
     // });
     // 3. 添加子菜单播放按钮的监听事件
     $(".content_list").delegate(".list_menu_play","click",function(){
+        // 3.1 切换播放按钮的图标
         $(this).toggleClass("list_menu_play2");
+        // 3.2 复原其他的播放图标
+        $(this).parents(".list_music").siblings().find(".list_menu_play").removeClass(".list_menu_play2");
     });
     getPlayerList();
     function getPlayerList(){
