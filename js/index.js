@@ -35,7 +35,7 @@ $(function(){
         // 3.1 切换播放按钮的图标
         $(this).toggleClass("list_menu_play2");
         // 3.2 复原其他的播放图标
-        $(this).parents(".list_music").siblings().find(".list_menu_play").removeClass(".list_menu_play2");
+        $(this).parents(".list_music").siblings().find(".list_menu_play").removeClass("list_menu_play2");
     });
     getPlayerList();
     function getPlayerList(){
