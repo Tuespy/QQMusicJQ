@@ -60,7 +60,7 @@ $(function(){
         "<div class=\"list_number\">"+(index+1)+"</div>"+
         "<div class=\"list_name\">"+music.name+
             "<div class=\"list_menu\">"+
-                "<a href=\"javascript:;\" title=\"播放\"></a>"+
+                "<a href=\"javascript:;\" title=\"播放\" class=\"list_menu_play\"></a>"+
                 "<a href=\"javascript:;\" title=\"添加\"></a>"+
                 "<a href=\"javascript:;\" title=\"下载\"></a>"+
                 "<a href=\"javascript:;\" title=\"分享\"></a>"+
